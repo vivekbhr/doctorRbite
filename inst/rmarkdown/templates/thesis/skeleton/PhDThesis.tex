@@ -1,0 +1,313 @@
+% Masters/Doctoral Thesis
+% LaTeX Template
+% Version 1.41 (9/9/13)
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original authors:
+% Steven Gunn
+% http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/
+% and
+% Sunil Patel
+% http://www.sunilpatel.co.uk/thesis-template/
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Note:
+% Make sure to edit document variables in the Thesis.cls file
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt, a4paper, twoside]{MPIthesis} % Paper size, default font size and one-sided paper
+
+%%% PACKAGED USED
+%\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+%% ADDED FROM RMD
+\usepackage{graphicx,latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}
+
+%% ADDED FROM FRIEDUE
+\usepackage[utf8]{inputenc} % Umlaute
+\usepackage[ngerman, english]{babel} % Umlaute --> ngerman; english--> Table of content instead of Inhaltsverzeichnis etc.
+\usepackage{fixltx2e} % so that \textsubscript can be used
+\usepackage{lscape}
+\usepackage{rotating} % for landscape option
+\usepackage{booktabs, multirow, array} % everything that I need for tables
+\usepackage{enumitem}
+\usepackage[compact]{titlesec} % for changing space after section titles
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+\usepackage{pdfpages} % to be able to include pdf files as appendices (\includepdf[pages={-}]{myfile.pdf})
+\usepackage[super, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers'
+
+%% from RMD
+\usepackage[hyphens]{url}
+% Added by CII
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{float}
+\floatplacement{figure}{H}
+% Added by CII (Thanks, Hadley!)
+% Use ref for internal links
+\renewcommand{\hyperref}[2][???]{\autoref{#1}}
+\def\chapterautorefname{Chapter}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Subsection}
+% End of CII addition
+
+% Added by CII
+\usepackage{caption}
+\captionsetup{width=5in}
+% End of CII addition
+
+
+% (FD) modification: removing "Chapter" from Chapter header
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        %\huge\bfseries \@chapapp\space \thechapter
+        \Huge\bfseries \thechapter.\space%
+        %\par\nobreak
+        %\vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+\title{\ttitle} % Defines the thesis title - don't touch this
+
+\renewcommand\floatpagefraction{.9}
+%\renewcommand\dblfloatpagefraction{.9} % for two column documents
+\renewcommand\topfraction{.9}
+%\renewcommand\dbltopfraction{.9} % for two column documents
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}
+%%RMD
+\renewcommand{\contentsname}{Table of Contents}
+%%
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\setlength{\parskip}{0pt}
+
+% Added by CII
+$if(space_between_paragraphs)$
+  %\setlength{\parskip}{\baselineskip}
+  \usepackage[parfill]{parskip}
+$endif$
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%%
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\setstretch{1.1} % Line spacing of 1.1
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{} % Clears all page headers and footers
+%\rhead{\thepage} % Sets the right side header to show the page number
+%\lhead{} % Clears the left side page header
+\fancyfoot[C]{\thepage}
+
+\pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % New command to make the lines in the title page
+\renewcommand{\thesubsubsection}{\hspace*{-1.0em}} % remove the numbering from subsubsections
+\renewcommand{\thefootnote}{\alph{footnote}}
+
+% PDF meta-data
+\hypersetup{pdftitle={\ttitle}}
+\hypersetup{pdfsubject=\subjectname}
+\hypersetup{pdfauthor=\authornames}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\large Max Planck Institut für Immunbiologie und Epigenetik\\Freiburg im Breisgau \\[1cm]
+
+\includegraphics[width=0.5\textwidth]{Figures/Siegel.png}
+\\[1.3cm]
+
+%\textsc{\LARGE \univname}\\[1.5cm] % University name
+%\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+
+%\HRule \\[0.4cm] % Horizontal line
+{\huge \textbf{Bioinformatic analyses of\\MOF-containing complexes\\[9pt]in mammals and \textit{Drosophila}}}\\[1.5cm] % Thesis title
+%\HRule \\[1.5cm] % Horizontal line
+
+
+\textsc{\LARGE Inaugural-Dissertation}\\[1cm] % University name
+\large zur Erlangung der Doktorwürde\\der Fakultät für Biologie\\der Albert-Ludwigs-Universität Freiburg im Breisgau\\[1cm] % University requirement text
+ % Author name - remove the \href bracket to remove the link
+
+\large vorgelegt von\\Friederike Dündar \\[1.5cm]
+
+\large Freiburg im Breisgau \\ Oktober 2014 \\ % Date
+
+\vfill
+\end{center}
+
+\end{titlepage}
+
+
+\thispagestyle{empty}
+\vspace*{\fill}
+Dekan der Fakultät für Biologie: Prof. Dr. Wolfgang Driever \\
+Promotionsvorsitzender: Prof. Dr. Stefan Rotter \\
+Betreuer der Arbeit: Dr. Asifa Akhtar \\
+Referent: Dr. Asifa Akhtar \\
+Koreferent: Prof. Dr. Wolfgang Hess \\
+Drittprüfer: Prof. Dr. Jörn Dengjel\\
+Datum der mündlichen Prüfung:
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+$if(acknowledgements)$
+  %% from friedue
+  \setstretch{1.3}
+  % from Rmd
+  \begin{acknowledgements}
+    \thispagestyle{empty}
+    $acknowledgements$
+  \end{acknowledgements}
+$endif$
+
+
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%---------------------------------------------------------------------------------------
+$if(preface)$
+  \begin{preface}
+    $preface$
+  \end{preface}
+$endif$
+
+$if(toc)$
+  %% from friedue
+  \pagestyle{fancy}
+  \pagenumbering{roman}
+  \fancyhead[RO,LE]{\emph{Contents}}
+  \fancyfoot{}
+  %% from Rmd
+  \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+  \setcounter{tocdepth}{$toc-depth$}
+  \tableofcontents
+$endif$
+
+$if(lot)$
+  \fancyhead[RO,LE]{\emph{List of Tables}}
+  \fancyfoot{}
+  \listoftables % Write out the List of Tables
+$endif$
+
+$if(lof)$
+  \fancyhead[RO,LE]{\emph{List of Figures}}
+  \fancyfoot{}
+  \listoffigures
+$endif$
+
+$if(abbreviations)$
+
+  \setstretch{1.3}
+  \fancyhead[RO,LE]{\emph{Abbreviations}}
+  \fancyfoot{}
+  \listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
+  ${abbreviations}$
+%%
+$endif$
+
+ ----------------------------------------------------------------
+% End of the pre-amble, contents and lists of things
+% Begin the Dedication page
+
+\setstretch{1.3}  % Return the line spacing back to 1.3
+
+\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{fancy} % Return the page headers back to the "fancy" style
+\setstretch{1.3}
+% Include the chapters of the thesis as separate files from the Chapters folder
+\input{$abstract$}
+\input{$introduction$}
+%\input{Chapters/Aims}
+\input{$results$}
+
+%\input{Tables/TableTesting}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+$if(publications)$
+  \input{$publications$}
+$endif$
+
+$if(others)$
+  \input{$other$}
+$endif$
+
+$if(CV)$
+ \chapter{Academic vita}
+ \begin{singlespacing}
+ \input{$CV$}
+ \end{singlespacing}
+$endif$
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\backmatter
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\label{Bibliography}
+
+%\fancyhead[RO,LE]{Bibliography}
+%\fancyfoot[C]{\thepage}
+
+%\begin{singlespacing}
+%\begin{sffamily}
+%\begin{footnotesize}
+%\bibliographystyle{MYunsrtnat} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+%\setlength{\bibsep}{2pt}
+%\bibliography{BibliographyMod} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+%\end{footnotesize}
+%\end{sffamily}
+%\end{singlespacing}
+
+\end{document}
