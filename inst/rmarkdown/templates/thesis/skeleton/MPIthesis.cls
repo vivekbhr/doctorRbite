@@ -245,61 +245,55 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
                 {FACULTY NAME (IN BLOCK CAPITALS)}} % Your faculty's name in capitals - this is not currently used anywhere in the template, cite it with \FACNAME if you want it
 %----------------------------------------------------------------------------------------
 
-% The default title page, this is not used in this www.latextemplates.com version
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
 \renewcommand\maketitle{
-  \btypeout{Title Page}
-  \hypersetup{pdftitle={\@title}}
-  \hypersetup{pdfsubject=\subjectname}
-  \hypersetup{pdfauthor=\authornames}
-  \hypersetup{pdfkeywords=\keywordnames}
-  \thispagestyle{empty}
-  \begin{titlepage}
-    \let\footnotesize\small
-    \let\footnoterule\relax
-    \let \footnote \thanks
-    \setcounter{footnote}{0}
-    \null\vfil
-    \vskip 60\p@
-    \begin{center}
-      \setlength{\parskip}{0pt}
-      {\large\textbf{\UNIVNAME}\par}
-      \vfill
-      {\huge \bf \@title \par}
-      \vfill
-      {\LARGE by \par}
-      \smallskip
-      {\LARGE \authornames \par}
-      \vfill
-      {\large A thesis submitted in partial fulfillment for the \par}
-      {\large degree of \degreename \par}
-      \bigskip
-      \bigskip
-      {\large in the \par}
-      {\large \facname \par}
-      {\large \deptname \par}
-      \bigskip
-      \bigskip
-      \bigskip
-      {\Large \@date \par}
-      \bigskip
-    \end{center}
-    \par
-    \@thanks
-    \vfil\null
-  \end{titlepage}
-  \setcounter{footnote}{0}%
-  \global\let\thanks\relax
-  \global\let\maketitle\relax
-  \global\let\@thanks\@empty
-  \global\let\@author\@empty
-  \global\let\@date\@empty
-  \global\let\@title\@empty
-  \global\let\title\relax
-  \global\let\author\relax
-  \global\let\date\relax
-  \global\let\and\relax
-  \cleardoublepage
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.06\textheight}
+%{\scshape\LARGE \@institution\par}\vspace{1.5cm} % University name
+{\scshape\large \@institution\par}\vspace{1.0cm} %
+\textsc{\Large Inaugural-Dissertation}\\[0.5cm] % Thesis type
+
+\HRule \\[0.4cm] % Horizontal line
+{\huge \bfseries \@title\par}\vspace{0.4cm} % Thesis title
+\HRule \\[1.5cm] % Horizontal line
+
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+{\@author} % Author name - remove the \href bracket to remove the link
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+{\@advisor} % Supervisor name
+\end{flushright}
+\end{minipage}\\[2cm]
+
+\vfill
+
+\large \textit{to obtain the Doctoral Degree }\\[0.3cm] % University requirement text
+\textit{in the}\\[0.4cm]
+\@faculty\\\@university\\[2cm] % faculty and Uni name
+
+\vfill
+
+{\large {\@date}}\\[4cm] % Date
+\includegraphics[width=0.5\textwidth]{figures/\@logo}
+\\[1.3cm]
+
+\vfill
+\end{center}
+\end{titlepage}
 }
+
+
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE DESIGN
 %----------------------------------------------------------------------------------------
