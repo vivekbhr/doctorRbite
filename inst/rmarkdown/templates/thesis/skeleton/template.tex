@@ -1,30 +1,8 @@
-% This is the Reed College LaTeX thesis template. Most of the work
-% for the document class was done by Sam Noble (SN), as well as this
-% template. Later comments etc. by Ben Salzberg (BTS). Additional
-% restructuring and APA support by Jess Youngberg (JY).
-% Your comments and suggestions are more than welcome; please email
-% them to cus@reed.edu
-%
-% See http://web.reed.edu/cis/help/latex.html for help. There are a
-% great bunch of help pages there, with notes on
-% getting started, bibtex, etc. Go there and read it if you're not
-% already familiar with LaTeX.
-%
-% Any line that starts with a percent symbol is a comment.
-% They won't show up in the document, and are useful for notes
-% to yourself and explaining commands.
-% Commenting also removes a line from the document;
-% very handy for troubleshooting problems. -BTS
-
-% As far as I know, this follows the requirements laid out in
-% the 2002-2003 Senior Handbook. Ask a librarian to check the
-% document before binding. -SN
-
 %%
 %% Preamble
 %%
 % \documentclass{<something>} must begin each LaTeX document
-\documentclass[12pt,twoside]{reedthesis}
+\documentclass[11pt,twoside]{MPIthesis}
 % Packages are extensions to the basic LaTeX functions. Whatever you
 % want to typeset, there is probably a package out there for it.
 % Chemistry (chemtex), screenplays, you name it.
@@ -76,28 +54,16 @@ $endif$
 % To pass between YAML and LaTeX the dollar signs are added by CII
 \title{$title$}
 \author{$author$}
-% The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
 \date{$date$}
-\division{$division$}
 \advisor{$advisor$}
 \institution{$institution$}
 \degree{$degree$}
-%If you have two advisors for some reason, you can use the following
-% Uncommented out by CII
 $if(altadvisor)$
 \altadvisor{$altadvisor$}
 $endif$
-% End of CII addition
 
 %%% Remember to use the correct department!
 \department{$department$}
-% if you're writing a thesis in an interdisciplinary major,
-% uncomment the line below and change the text as appropriate.
-% check the Senior Handbook if unsure.
-%\thedivisionof{The Established Interdisciplinary Committee for}
-% if you want the approval page to say "Approved for the Committee",
-% uncomment the next line
-%\approvedforthe{Committee}
 
 % Added by CII
 %%% Copied from knitr
@@ -131,14 +97,6 @@ $endif$
 $acknowledgements$
 }
 
-\Dedication{
-$dedication$
-}
-
-\Preface{
-$preface$
-}
-
 \Abstract{
 $abstract$
 }
@@ -168,12 +126,6 @@ $if(acknowledgements)$
   \end{acknowledgements}
 $endif$
 
-$if(preface)$
-  \begin{preface}
-    $preface$
-  \end{preface}
-$endif$
-
 $if(toc)$
   \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
   \setcounter{tocdepth}{$toc-depth$}
@@ -192,12 +144,6 @@ $if(abstract)$
   \begin{abstract}
     $abstract$
   \end{abstract}
-$endif$
-
-$if(dedication)$
-  \begin{dedication}
-    $dedication$
-  \end{dedication}
 $endif$
 
 \mainmatter % here the regular arabic numbering starts
