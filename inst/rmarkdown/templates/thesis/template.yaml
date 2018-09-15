@@ -1,4 +1,3 @@
-name:  Thesis
+name:  MPIthesis
 description: >
- Template for creating a Senior Thesis at Reed College using R Markdown based on the Reed College LaTeX and Word templates and the R bookdown package.
-
+ Template for creating a PhD Thesis at MPI-IE, Freiburg using R Markdown based on a cumulative thesis template and the R bookdown package.

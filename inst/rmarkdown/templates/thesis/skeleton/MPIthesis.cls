@@ -111,16 +111,16 @@
 \usepackage{textcomp} % added by FD to enable \text
 \usepackage{amsmath,amsfonts,amssymb,amscd,amsthm,xspace}
 \theoremstyle{plain}
-\newtheorem{example}{Example}[chapter]
+%\newtheorem{example}{Example}[chapter]
 %\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{axiom}[theorem]{Axiom}
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{axiom}[theorem]{Axiom}
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\theoremstyle{remark}
+%\newtheorem{remark}[theorem]{Remark}
 \usepackage[small,bf,sf,singlelinecheck=off]{caption} % changed this to adjust the figure caption format
 %\setlength{\captionmargin}{10pt}
 \newcommand{\fref}[1]{Figure~\ref{#1}}
@@ -210,7 +210,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 %-------------------------------------------------
 \degree{Dr. rer. nat} % Your degree name - this is currently used in the title page and abstract
 %-------------------------------------------------
-\authors{ Vivek Bhardwaj} % Your name - this is used in the title page and abstract
+\authors{ Friederike D{\"u}ndar} % Your name - this is used in the title page and abstract
 %-------------------------------------------------
 \addresses{} % Your address - this is not currently used anywhere in the template, cite it with \addressnames if you want it
 %-------------------------------------------------
