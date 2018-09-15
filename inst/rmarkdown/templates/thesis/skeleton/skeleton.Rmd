@@ -1,6 +1,6 @@
 ---
 author: ''
-date: `r format(Sys.time(), '%d %B, %Y')`
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 institution: 'Max Planck Institute for Immunobiology and Epigenetics'
 division: ''
 advisor: ''
