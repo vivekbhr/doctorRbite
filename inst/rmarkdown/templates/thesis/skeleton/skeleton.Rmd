@@ -1,11 +1,9 @@
 ---
-author: ''
-date: "`r format(Sys.time(), '%d %B, %Y')`"
 institution: 'Max Planck Institute for Immunobiology and Epigenetics'
-advisor: ''
-department: ''
-degree: 'Dr. rer. nat'
 title: ''
+author: ''
+advisor: ''
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 output:
@@ -15,10 +13,6 @@ acknowledgements: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-acknowledgements.Rmd"), collapse = '\n  ')`
 abstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
-# If you'd rather include the preliminary content in files instead of inline
-# like below, use a command like that for the abstract above.  Note that a tab is
-# needed on the line after the |.
-
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl
