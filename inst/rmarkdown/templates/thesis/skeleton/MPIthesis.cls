@@ -11,6 +11,8 @@
 % 2004-2005 Ben Salzberg (BTS) a variety of tweaks here and in the template
 % 2015 Chester Ismay (CII) modified to create R Markdown template
 % 2018 Vivek Bhardwaj (VB) modified to fit MPI-IE cumulative thesis style
+%
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{MPIthesis}[2004/01/27 The MPI-IE cumulative thesis class]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -97,28 +99,6 @@
 		    \secdef\@chapter\@schapter}
 
 % Stolen from book.cls PBC 5/12/05
-% Using this to actually show "Chapter 1" in TOC instead of "1"
-\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
-                       \if@mainmatter
-                         \refstepcounter{chapter}%
-                         \typeout{\@chapapp\space\thechapter.}%
-                         \addcontentsline{toc}{chapter}%
-                         {\@chapapp\space\thechapter:\space#1}%
-                       \else
-                         \addcontentsline{toc}{chapter}{#1}%
-                       \fi
-                    \else
-                      \addcontentsline{toc}{chapter}{#1}%
-                    \fi
-                    \chaptermark{#1}%
-                    \addtocontents{lof}{\protect\addvspace{10\p@}}%
-                    \addtocontents{lot}{\protect\addvspace{10\p@}}%
-                    \if@twocolumn
-                      \@topnewpage[\@makechapterhead{#2}]%
-                    \else
-                      \@makechapterhead{#2}%
-                      \@afterheading
-                    \fi}
 
 \newcommand{\RTcleardoublepage}{
 	\clearpage\if@twoside \ifodd\c@page\else
@@ -152,23 +132,44 @@
 \newif\if@altadvisor
 \@altadvisorfalse
 
-\renewcommand\l@chapter[2]{%
-  \ifnum \c@tocdepth >\m@ne
-    \addpenalty{-\@highpenalty}%
-    \vskip 1.0em \@plus\p@
-    \setlength\@tempdima{1.5em}%
-    \begingroup
-      \parindent \z@ \rightskip \@pnumwidth
-      \parfillskip -\@pnumwidth
-      \leavevmode \bfseries
-      \advance\leftskip\@tempdima
-      \hskip -\leftskip
-      #1\nobreak\normalfont
-      \leaders\hbox{$\m@th \mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
-      \nobreak\hb@xt@\@pnumwidth{\bfseries \hss #2}\par
-      \penalty\@highpenalty
-    \endgroup
-  \fi}
+% VB : removing "Chapter" from Chapter header
+%% -- COMMENT OUT THESE LINES AND UNCOMMENT THE FOLLOWING LINES TO KEEP CHAPTER NAMES IN PAGES
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        %\huge\bfseries \@chapapp\space \thechapter
+        \Huge\bfseries \thechapter.\space%
+        %\par\nobreak
+        %\vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+
+%\renewcommand\l@chapter[2]{%
+%  \ifnum \c@tocdepth >\m@ne
+%    \addpenalty{-\@highpenalty}%
+%    \vskip 1.0em \@plus\p@
+%    \setlength\@tempdima{1.5em}%
+%    \begingroup
+%      \parindent \z@ \rightskip \@pnumwidth
+%      \parfillskip -\@pnumwidth
+%      \leavevmode \bfseries
+%      \advance\leftskip\@tempdima
+%      \hskip -\leftskip
+%      #1\nobreak\normalfont
+%      \leaders\hbox{$\m@th \mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
+%      \nobreak\hb@xt@\@pnumwidth{\bfseries \hss #2}\par
+%      \penalty\@highpenalty
+%    \endgroup
+%  \fi}
+
+%% END OF MOD BY VB
 
 %%% Added by CII
 \newenvironment{acknowledgements}{%
@@ -255,6 +256,8 @@
 \end{titlepage}
   }
 }
+
+%%% END OF MOD BY VB
 
 % From JSS
 % Added by CII
