@@ -197,55 +197,62 @@
   \AtBeginDvi{\special{!\RTpercent MPI-IE cumulative thesis class}}
   \AtBeginDvi{\special{rawpostscript \RTpercent MPI-IE cumulative thesis class}}
 \else
-  \AtEndDocument{\pdfinfo{/Creator	(MPI-IE cumulative thesis class)}}
+  \AtEndDocument{\pdfinfo{/Creator	(Vivek Bhardwaj)}}
 \fi
 
-% I hacked the title page to all be the same font size
-% as requested by the library, BTS 2005
+% VB -- I painfully created this fancy title page
 
 \renewcommand{\maketitle}{%
   {
   \begin{titlepage}
-  \begin{center}
 
-  \vspace*{.06\textheight}
-  %{\scshape\LARGE \@institution\par}\vspace{1.5cm} % University name
-  {\scshape\LARGE \@institution\par}\vspace{1.0cm}
-   %
-  \textsc{\Large Inaugural-Dissertation}\\[0.5cm] % Thesis type
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+\definecolor{carmine}{rgb}{0.59, 0.0, 0.09} %% new color for highlights
+\center % Center everything on the page
 
-  \HRule \\[0.4cm] % Horizontal line
-  {\huge \bfseries \@title\par}\vspace{0.4cm} % Thesis title
-  \HRule \\[1.5cm] % Horizontal line
+%%heading
+\vspace*{.06\textheight}
+{\color{carmine}
+{\LARGE \@institution}\\[1.5cm] % Name of your university/college
+}
 
-  \begin{minipage}[t]{0.4\textwidth}
-  \begin{flushleft} \large
-  \emph{Author:}\\
-  {\@author} % Author name - remove the \href bracket to remove the link
-  \end{flushleft}
-  \end{minipage}
-  \begin{minipage}[t]{0.4\textwidth}
-  \begin{flushright} \large
-  \emph{Supervisor:} \\
-  {\@advisor} % Supervisor name
-  \end{flushright}
-  \end{minipage}\\[2cm]
+{\color{black!80} %% set default color for the rest of the title page
+%%title
+\HRule \\[0.4cm]
+{ \huge \bfseries \@title\par}\vspace{0.4cm} % Title of your document
+\HRule \\[1.5cm]
+\textsc{\LARGE Inaugural-Dissertation}\\[1cm]
+%%author section
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+\textcolor{carmine}{\@author} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+\textcolor{carmine}{\@advisor} % Supervisor's Name
+\end{flushright}
+\end{minipage}\\[2cm]
 
-  \vfill
+ %%logo
+\includegraphics[width=0.3\textwidth]{figures/uni_logo.png}\\[0.3cm] % Include a department/university logo - this will require the graphicx package
+\large \textit{to obtain the Doctoral Degree at the}\\[0.3cm] % University requirement text
+{\color{carmine}
+\textsc{\large Faculty of Biology}\\[0.5cm] % Major heading such as course name
+\textsc{\Large Albert-Ludwigs-Universität Freiburg im Breisgau}\\[0.5cm] % Minor heading such as course title
+}
+%% end of black 50
+}
+%%date
+{\large \@date}\\[2cm] % Date, change the \today to a set date if you want to be precise
+%----------------------------------------------------------------------------------------
 
-  \large \textit{to obtain the Doctoral Degree }\\[0.3cm] % University requirement text
-  \textit{in the}\\[0.4cm]
-  \@faculty\\\@university\\[2cm] % faculty and Uni name
+\vfill % Fill the rest of the page with whitespace
 
-  \vfill
-
-  {\large {\@date}}\\[4cm] % Date
-  \includegraphics[width=0.5\textwidth]{figures/\@logo}
-  \\[1.3cm]
-
-  \vfill
-  \end{center}
-  \end{titlepage}
+\end{titlepage}
   }
 }
 
