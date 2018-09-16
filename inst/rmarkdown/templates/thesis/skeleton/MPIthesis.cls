@@ -43,7 +43,7 @@
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage{color}
+\usepackage{xcolor}
 %\newcommand{\VerbBar}{|}
 %\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
 \DefineVerbatimEnvironment{verbatim}{Verbatim}{xleftmargin=-1em}
