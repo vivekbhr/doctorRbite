@@ -127,6 +127,15 @@
 
 \def\advisor#1{\gdef \@advisor{#1}}
 \def\@advisor{\@latex@warning@no@line{No \noexpand\advisor given}}
+\def\secondreviewer#1{\gdef \@secondreviewer{#1}}
+\def\@secondreviewer{\@latex@warning@no@line{No \noexpand\secondreviewer given}}
+\def\thirdreviewer#1{\gdef \@thirdreviewer{#1}}
+\def\@thirdreviewer{\@latex@warning@no@line{No \noexpand\thirdreviewer given}}
+\def\decan#1{\gdef \@decan{#1}}
+\def\@decan{\@latex@warning@no@line{No \noexpand\decan given}}
+\def\promotionsvorsitzender#1{\gdef \@promotionsvorsitzender{#1}}
+\def\@promotionsvorsitzender{\@latex@warning@no@line{No \noexpand\promotionsvorsitzender given}}
+
 \def\altadvisor#1{\gdef \@altadvisor{#1} \@altadvisortrue}
 \global\let\@altadvisor\@empty
 \newif\if@altadvisor
@@ -256,6 +265,23 @@
 \end{titlepage}
   }
 }
+
+%%% make the 2nd page
+\newcommand{\makepagetwo}{
+ {
+ \thispagestyle{empty}
+ \vspace*{\fill}
+ Dekan der Fakultät für Biologie: \@decan \\ %Prof. Dr. Wolfgang Driever
+ Promotionsvorsitzender: \@promotionsvorsitzender \\ %Prof. Dr. Stefan Rotter
+ Betreuer der Arbeit: \@advisor \\ %%asifa
+ Referent: \@advisor \\ %asifa
+ Koreferent: \@secondreviewer \\ %Prof. Dr. Wolfgang Hess
+ Drittprüfer: \@thirdreviewer  \\ %Prof. Dr. Jörn Dengjel
+ Datum der mündlichen Prüfung:
+ \clearpage
+ }
+}
+
 
 %%% END OF MOD BY VB
 

@@ -60,7 +60,11 @@ $endif$
 \date{$date$}
 \advisor{$advisor$}
 \institution{$institution$}
-\degree{$degree$}
+\secondreviewer{$secondreviewer$}
+\thirdreviewer{$thirdreviewer$}
+\decan{$decan$}
+\promotionsvorsitzender{$promotionsvorsitzender$}
+
 $if(altadvisor)$
 \altadvisor{$altadvisor$}
 $endif$
@@ -115,11 +119,15 @@ $endfor$
 
 \begin{document}
 
-% Everything below added by CII
+%% VB add
 $if(title)$
   \maketitle
 $endif$
 
+\makepagetwo
+%% \VB add
+
+% Everything below added by CII
 \frontmatter % this stuff will be roman-numbered
 \pagestyle{empty} % this removes page numbers from the frontmatter
 

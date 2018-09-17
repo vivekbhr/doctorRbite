@@ -3,6 +3,10 @@ institution: 'Max Planck Institute for Immunobiology and Epigenetics'
 title: ''
 author: ''
 advisor: ''
+secondreviewer: ''
+thirdreviewer: ''
+decan: 'Mr. Decan'
+promotionsvorsitzender: 'Dr. Someone'
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
@@ -17,7 +21,7 @@ bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl
 # Download your specific csl file and refer to it in the line above.
-lot: true
+lot: false
 lof: true
 space_between_paragraphs: true
 ---
@@ -32,7 +36,3 @@ if(!require(thesisdown))
   devtools::install_github("ismayc/thesisdown")
 library(thesisdown)
 ```
-
-# Introduction {.unnumbered}
-
-Some stuff
