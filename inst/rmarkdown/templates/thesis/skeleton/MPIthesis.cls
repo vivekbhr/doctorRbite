@@ -283,6 +283,69 @@
  }
 }
 
+%% trying to add list of figures and tables to TOC
+%\newcommand\btypeout[1]{\bhrule\typeout{\space #1}\bhrule}
+
+\newcounter{dummy}
+\newcommand\addtotoc[1]{
+\refstepcounter{dummy}
+\addcontentsline{toc}{chapter}{#1}}
+\renewcommand\tableofcontents{
+\typeout{Table of Contents}
+%\addtotoc{Contents}
+\begin{spacing}{1}{
+    \setlength{\parskip}{1pt}
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\contentsname
+        \@mkboth{
+           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
+    \@starttoc{toc}
+    \if@restonecol\twocolumn\fi
+   \cleardoublepage
+}\end{spacing}
+}
+\renewcommand\listoffigures{
+\typeout{List of Figures}
+\addtotoc{List of Figures}
+\begin{spacing}{1}{
+    \setlength{\parskip}{1pt}
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\listfigurename
+      \@mkboth{\MakeUppercase\listfigurename}
+              {\MakeUppercase\listfigurename}}
+    \@starttoc{lof}
+    \if@restonecol\twocolumn\fi
+    \cleardoublepage
+}\end{spacing}
+}
+\renewcommand\listoftables{
+\typeout{List of Tables}
+\addtotoc{List of Tables}
+\begin{spacing}{1}{
+    \setlength{\parskip}{1pt}
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\listtablename
+      \@mkboth{
+          \MakeUppercase\listtablename}{\MakeUppercase\listtablename}}
+    \@starttoc{lot}
+    \if@restonecol\twocolumn\fi
+    \cleardoublepage
+}\end{spacing}
+}
+
+
 %%% END OF MOD BY VB
 
 % From JSS
