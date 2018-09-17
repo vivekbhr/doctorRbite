@@ -1,6 +1,5 @@
 book_filename: "thesis"
 chapter_name: ""
-rmd_files: ["index.Rmd", "00-acknowledgements.Rmd", "00-abstract.Rmd", "01-introduction.Rmd", "02-results_discussion.Rmd", "03-appendix.Rmd",
-"04-CV.Rmd", "99-references.Rmd"]
+rmd_files: ["index.Rmd", "01-introduction.Rmd", "02-results_discussion.Rmd", "03-appendix.Rmd", "04-CV.Rmd", "99-references.Rmd"]
 download: [["thesis.pdf", "PDF"], ["thesis.epub", "EPUB"], ["thesis.docx", "Word"]]
 delete_merged_file: true

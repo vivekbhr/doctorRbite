@@ -12,5 +12,17 @@ This includes my papers.
 +---------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------+
+<!--
+Include your manuscripts as pdf here, like this :
 
-\includepdf[scale=0.9,pages=-,pagecommand={}, offset=0.3cm 0cm]{manuscripts/tad_manuscript.pdf}
+\includepdf[scale=0.9,pages=-,pagecommand={}, offset=0.3cm 0cm]{manuscripts/ramirez2018.pdf}
+-->
+
+
+
+
+# Supplemental information
+
+<!--
+Include your CV either as pdf or as Rmd here
+-->

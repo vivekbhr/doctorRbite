@@ -1,5 +1,5 @@
 ---
-institution: 'Max Planck Institute for Immunobiology and Epigenetics'
+institution: 'Max Planck Institute of Immunobiology and Epigenetics'
 title: ''
 author: ''
 advisor: ''

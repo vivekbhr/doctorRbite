@@ -198,7 +198,7 @@
   \else
     \@restonecolfalse
   \fi
-  \chapter*{Abstract}
+  \chapter*{Summary}
   \fontsize{12}{14}\selectfont
 }{\clearpage \if@restonecol\twocolumn\fi}%
 
