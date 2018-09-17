@@ -14,10 +14,9 @@ This includes my papers.
 +---------------------------------------------------------------------------------+
 <!--
 Include your manuscripts as pdf here, like this :
-
-\includepdf[scale=0.9,pages=-,pagecommand={}, offset=0.3cm 0cm]{manuscripts/ramirez2018.pdf}
 -->
 
+\includepdf[scale=0.9,pages=-,pagecommand={}, offset=0.3cm 0cm]{manuscripts/ramirez2018.pdf}
 
 
 
