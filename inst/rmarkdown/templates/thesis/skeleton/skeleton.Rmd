@@ -36,3 +36,18 @@ if(!require(thesisdown))
   devtools::install_github("ismayc/thesisdown")
 library(thesisdown)
 ```
+
+# Abbreviations {-}
+
+```{r echo = FALSE}
+## an example of how to include abbreviations
+library(tibble)
+library(dplyr)
+library(knitr)
+
+data_frame(
+  Term = c("Working memory", "Short-term memory", "Long-term memory"),
+  Abbreviation = c("WM", "STM", "LTM")) %>%
+  arrange(Term) %>% # i.e. alphabetical order by Term
+  kable(booktab = T) # booktab = T gives us a pretty APA-ish table
+```

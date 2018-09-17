@@ -180,6 +180,15 @@
 
 %% END OF MOD BY VB
 
+\ifx\@pdfoutput\@undefined
+  \newcommand{\RTpercent}{\@percentchar\space}
+  \AtBeginDvi{\special{!\RTpercent MPI-IE cumulative thesis class}}
+  \AtBeginDvi{\special{rawpostscript \RTpercent MPI-IE cumulative thesis class}}
+\else
+  \AtEndDocument{\pdfinfo{/Creator	(Vivek Bhardwaj)}}
+\fi
+
+%%% -------------- Define sections of the thesis --------
 %%% Added by CII
 \newenvironment{acknowledgements}{%
   \if@twocolumn
@@ -202,86 +211,77 @@
   \fontsize{12}{14}\selectfont
 }{\clearpage \if@restonecol\twocolumn\fi}%
 
-\ifx\@pdfoutput\@undefined
-  \newcommand{\RTpercent}{\@percentchar\space}
-  \AtBeginDvi{\special{!\RTpercent MPI-IE cumulative thesis class}}
-  \AtBeginDvi{\special{rawpostscript \RTpercent MPI-IE cumulative thesis class}}
-\else
-  \AtEndDocument{\pdfinfo{/Creator	(Vivek Bhardwaj)}}
-\fi
-
 % VB -- I painfully created this fancy title page
 
 \renewcommand{\maketitle}{%
   {
   \begin{titlepage}
 
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-\definecolor{carmine}{rgb}{0.59, 0.0, 0.09} %% new color for highlights
-\center % Center everything on the page
+  \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+  \definecolor{carmine}{rgb}{0.59, 0.0, 0.09} %% new color for highlights
+  \center % Center everything on the page
 
-%%heading
-\vspace*{.06\textheight}
-{\color{carmine}
-{\LARGE \@institution}\\[1.5cm] % Name of your university/college
-}
+  %%heading
+  \vspace*{.06\textheight}
+  {\color{carmine}
+    {\LARGE \@institution}\\[1.5cm] % Name of your university/college
+  }
 
-{\color{black!80} %% set default color for the rest of the title page
-%%title
-\HRule \\[0.4cm]
-{ \huge \bfseries \@title\par}\vspace{0.4cm} % Title of your document
-\HRule \\[1.5cm]
-\textsc{\LARGE Inaugural-Dissertation}\\[1cm]
-%%author section
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author:}\\
-\textcolor{carmine}{\@author} % Your name
-\end{flushleft}
-\end{minipage}
+  {\color{black!80} %% set default color for the rest of the title page
+  %%title
+  \HRule \\[0.4cm]
+  { \huge \bfseries \@title\par}\vspace{0.4cm} % Title of your document
+  \HRule \\[1.5cm]
+  \textsc{\LARGE Inaugural-Dissertation}\\[1cm]
+  %%author section
+  \begin{minipage}{0.4\textwidth}
+  \begin{flushleft} \large
+  \emph{Author:}\\
+  \textcolor{carmine}{\@author} % Your name
+  \end{flushleft}
+  \end{minipage}
 ~
-\begin{minipage}{0.4\textwidth}
-\begin{flushright} \large
-\emph{Supervisor:} \\
-\textcolor{carmine}{\@advisor} % Supervisor's Name
-\end{flushright}
-\end{minipage}\\[2cm]
+  \begin{minipage}{0.4\textwidth}
+  \begin{flushright} \large
+  \emph{Supervisor:} \\
+  \textcolor{carmine}{\@advisor} % Supervisor's Name
+  \end{flushright}
+  \end{minipage}\\[2cm]
 
  %%logo
-\includegraphics[width=0.3\textwidth]{figures/uni_logo.png}\\[0.3cm] % Include a department/university logo - this will require the graphicx package
-\large \textit{to obtain the Doctoral Degree at the}\\[0.3cm] % University requirement text
-{\color{carmine}
-\textsc{\large Faculty of Biology}\\[0.5cm] % Major heading such as course name
-\textsc{\Large Albert-Ludwigs-Universität Freiburg im Breisgau}\\[0.5cm] % Minor heading such as course title
-}
-%% end of black 50
-}
-%%date
-{\large \@date}\\[2cm] % Date, change the \today to a set date if you want to be precise
+  \includegraphics[width=0.3\textwidth]{figures/uni_logo.png}\\[0.3cm] % Include a department/university logo - this will require the graphicx package
+  \large \textit{to obtain the Doctoral Degree at the}\\[0.3cm] % University requirement text
+  {\color{carmine}
+    \textsc{\large Faculty of Biology}\\[0.5cm] % Major heading such as course name
+    \textsc{\Large Albert-Ludwigs-Universität Freiburg im Breisgau}\\[0.5cm] % Minor heading such as course title
+  }
+  %% end of black 50
+  }
+  %%date
+  {\large \@date}\\[2cm] % Date, change the \today to a set date if you want to be precise
 %----------------------------------------------------------------------------------------
 
-\vfill % Fill the rest of the page with whitespace
+  \vfill % Fill the rest of the page with whitespace
 
-\end{titlepage}
+  \end{titlepage}
   }
 }
 
 %%% make the 2nd page
 \newcommand{\makepagetwo}{
  {
- \thispagestyle{empty}
- \vspace*{\fill}
- Dekan der Fakultät für Biologie: \@decan \\ %Prof. Dr. Wolfgang Driever
- Promotionsvorsitzender: \@promotionsvorsitzender \\ %Prof. Dr. Stefan Rotter
- Betreuer der Arbeit: \@advisor \\ %%asifa
- Referent: \@advisor \\ %asifa
- Koreferent: \@secondreviewer \\ %Prof. Dr. Wolfgang Hess
- Drittprüfer: \@thirdreviewer  \\ %Prof. Dr. Jörn Dengjel
- Datum der mündlichen Prüfung:
- \clearpage
+  \thispagestyle{empty}
+  \vspace*{\fill}
+  Dekan der Fakultät für Biologie: \@decan \\ %Prof. Dr. Wolfgang Driever
+  Promotionsvorsitzender: \@promotionsvorsitzender \\ %Prof. Dr. Stefan Rotter
+  Betreuer der Arbeit: \@advisor \\ %%asifa
+  Referent: \@advisor \\ %asifa
+  Koreferent: \@secondreviewer \\ %Prof. Dr. Wolfgang Hess
+  Drittprüfer: \@thirdreviewer  \\ %Prof. Dr. Jörn Dengjel
+  Datum der mündlichen Prüfung:
+  \clearpage
  }
 }
-
 
 %%% END OF MOD BY VB
 

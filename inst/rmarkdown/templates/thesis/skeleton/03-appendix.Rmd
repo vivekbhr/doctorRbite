@@ -23,5 +23,11 @@ Include your manuscripts as pdf here, like this :
 # Supplemental information
 
 <!--
+Include extra info here
+-->
+
+# Academic Vita
+
+<!--
 Include your CV either as pdf or as Rmd here
 -->
