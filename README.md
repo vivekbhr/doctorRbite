@@ -1,4 +1,4 @@
-# thesisdown
+# doctorRbite
 
 This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) package and is an updated version of my Senior Thesis template in the `reedtemplates` package [here](http://github.com/ismayc/reedtemplates).
 
