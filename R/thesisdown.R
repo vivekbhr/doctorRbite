@@ -1,4 +1,4 @@
-#' thesisdown: A package for creating undergraduate, Masters, and PhD theses
+#' doctorRbite: A package for creating PhD theses for Uni Freiburg
 #'using R Markdown
 #'
 #'
