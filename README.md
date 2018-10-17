@@ -1,6 +1,6 @@
 # doctorRbite
 
-This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) package and is an updated version of my Senior Thesis template in the `reedtemplates` package [here](http://github.com/ismayc/reedtemplates).
+This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) and [thesisdown]() packages.
 
 Currently, the PDF and gitbook versions are fully-functional.  The word and epub versions are developmental, have no templates behind them, and are essentially calls to the appropriate functions in bookdown.
 
@@ -12,23 +12,13 @@ The current output for the four versions is here:
 - [ePub](https://github.com/ismayc/thesisdown_book/blob/gh-pages/thesis.epub)
 - [gitbook](http://ismayc.github.io/thesisdown_book)
 
-Under the hood, the Reed College LaTeX template is used to ensure that documents conform precisely to submission standards. At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
+Under the hood, the a custom LaTeX template is used to ensure that documents conform precisely to the University of Freiburg, faculty f biology submission standards. At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
 
-## Customizing thesisdown to your institution
+### Using doctorRbite from Vivek's GitHub
 
-In an ideal world, this package would support a variety of different LaTeX templates from a wide range of institutions and we'd love to get it there at some point. Until that time, realize that this was designed to only work with the Reed College LaTeX template but others have adapted it to work with their institutions.  Here are a couple that have customized it to fit their needs.  It is recommended you review how they changed the files by comparing their repositories to this one and then make tweaks to yours as needed.  Feel free to file an issue on this repo if you have questions/troubles:
+Using **doctorRbite** has some prerequisites which are described below. To compile PDF documents using **R**, you are going to need to have LaTeX installed.  It can be downloaded for Windows at <http://http://miktex.org/download> and for Mac at <http://tug.org/mactex/mactex-download.html>.  Follow the instructions to install the necessary packages after downloading the (somewhat large) installer files.  You may need to install a few extra LaTeX packages on your first attempt to knit as well.
 
-- Mine Cetinkaya-Rundel at Duke University: [thesisdowndss](https://github.com/mine-cetinkaya-rundel/thesisdowndss)
-- Zhian Kamvar at Oregon State University: [beaverdown](https://github.com/zkamvar/beaverdown)
-- Ben Marwick at the University of Washington: [huskydown](https://github.com/benmarwick/huskydown)
-- Jake Thompson at the University of Kansas: [jayhawkdown](https://github.com/wjakethompson/jayhawkdown)
-
-
-### Using thesisdown from Chester's GitHub
-
-Using **thesisdown** has some prerequisites which are described below. To compile PDF documents using **R**, you are going to need to have LaTeX installed.  It can be downloaded for Windows at <http://http://miktex.org/download> and for Mac at <http://tug.org/mactex/mactex-download.html>.  Follow the instructions to install the necessary packages after downloading the (somewhat large) installer files.  You may need to install a few extra LaTeX packages on your first attempt to knit as well.
-
-To use **thesisdown** from RStudio:
+To use **doctorRbite** from RStudio:
 
 1) Install the latest [RStudio](http://www.rstudio.com/products/rstudio/download/).
 Only the version as of Oct 2017 has a recent enough Pandoc included so you may need to upgrade this
@@ -39,15 +29,15 @@ separately or install a newer RStudio.
     #> [1] TRUE
     ```
 
-2) Install the **bookdown** and **thesisdown** packages: 
+2) Install the **bookdown** and **doctorRbite** packages: 
 
 ```
 install.packages("devtools")
 devtools::install_github("rstudio/bookdown")
-devtools::install_github("ismayc/thesisdown")
+devtools::install_github("vivekbhr/doctorRbite")
 ```
 
-3) Use the **New R Markdown** dialog to select **Thesis**:
+3) Use the **New R Markdown** dialog to select **MPIthesis**:
 
     ![New R Markdown](thesis_rmd.png)
 
