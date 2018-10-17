@@ -1,8 +1,8 @@
 # doctorRbite
 
-This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) and [thesisdown]() packages.
+Easy way to write your thesis using Rmarkdown, for doctoral students at the **Max Planck Institute of Immunobiology and Epigenetics, Freiburg**. 
 
-Currently, the PDF and gitbook versions are fully-functional.  The word and epub versions are developmental, have no templates behind them, and are essentially calls to the appropriate functions in bookdown.
+This project was inspired by the [bookdown](http://github.com/rstudio/bookdown) and [thesisdown]() packages. Currently, the PDF and gitbook versions are fully-functional.  The word and epub versions are developmental, have no templates behind them, and are essentially calls to the appropriate functions in bookdown.
 
 If you are new to working with `bookdown`/`rmarkdown`, please read over the documentation available in the `gitbook` template at https://thesisdown.netlify.com/.  This is also available below at http://ismayc.github.io/thesisdown_book.
 
@@ -12,7 +12,7 @@ The current output for the four versions is here:
 - [ePub](https://github.com/ismayc/thesisdown_book/blob/gh-pages/thesis.epub)
 - [gitbook](http://ismayc.github.io/thesisdown_book)
 
-Under the hood, the a custom LaTeX template is used to ensure that documents conform precisely to the University of Freiburg, faculty f biology submission standards. At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
+Under the hood, the a custom LaTeX template is used to ensure that documents conform precisely to the University of Freiburg, faculty of biology submission standards. At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
 
 ### Using doctorRbite from Vivek's GitHub
 
@@ -45,3 +45,8 @@ devtools::install_github("vivekbhr/doctorRbite")
 
 4) After choosing which type of output you'd like in the YAML at the top of index.Rmd, **Knit** the `index.Rmd` file to get the book in PDF or HTML formats.
 5) Edit the individual chapter R Markdown files as you wish and then re-run step (4) again.
+
+
+## Can I write my thesis in word instead?
+
+YES you can write your thesis in MS word/google docs and still format it at the end using doctorRbite. For this you need to first convert your word document into markdown, using pandoc. Contact me for additional details. 
